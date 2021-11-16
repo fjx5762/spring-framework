@@ -33,7 +33,7 @@ import org.springframework.util.ResourceUtils;
  * context's resource loading strategy.
  *
  * @author Juergen Hoeller
- * @since 10.03.2004
+ * @since 10.03.2004˙
  * @see Resource
  * @see org.springframework.core.io.support.ResourcePatternResolver
  * @see org.springframework.context.ApplicationContext
@@ -46,6 +46,7 @@ public interface ResourceLoader {
 
 
 	/**
+	 *
 	 * Return a {@code Resource} handle for the specified resource location.
 	 * <p>The handle should always be a reusable resource descriptor,
 	 * allowing for multiple {@link Resource#getInputStream()} calls.
