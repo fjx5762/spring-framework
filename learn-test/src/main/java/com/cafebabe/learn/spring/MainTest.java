@@ -1,6 +1,7 @@
 package com.cafebabe.learn.spring;
 
 import com.cafebabe.learn.spring.bean.Person;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainTest {
 
 	public static void main(String[] args) {
-		final ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		final ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		final Person bean = context.getBean(Person.class);
 		System.out.println(bean);
 	}

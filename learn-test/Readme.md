@@ -25,4 +25,7 @@ applicationContext 与 beanFactory 区别
 
 
 
+通过不同资源(Resource)的来源解析出 Bean的定义信息（BeanDefinition）
+
+
 
