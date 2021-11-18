@@ -28,6 +28,12 @@ import org.springframework.lang.Nullable;
  * {@link org.springframework.beans.factory.config.ConfigurableBeanFactory}
  * are available for specific purposes.
  *
+ * 生产组件
+ * 该接口由包含许多 bean 定义的对象实现，每个 bean 定义由一个 String 名称唯一标识。根据 bean 定义，
+ * 工厂将返回包含对象的独立实例（原型设计模式），或单个共享实例（单例设计模式的高级替代方案，其中实例是范围内的单例）工厂）。
+ * 返回哪种类型的实例取决于 bean factory 配置：API 是相同的。
+ * 从 Spring 2.0 开始，根据具体的应用程序上下文（例如 Web 环境中的“请求”和“会话”范围），可以使用更多范围。
+ *
  * <p>This interface is implemented by objects that hold a number of bean definitions,
  * each uniquely identified by a String name. Depending on the bean definition,
  * the factory will return either an independent instance of a contained object
