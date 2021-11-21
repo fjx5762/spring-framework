@@ -9,6 +9,9 @@ import org.springframework.beans.factory.support.RootBeanDefinition;
  */
 public class MyMergedBeanDefinitionPostProcessor implements MergedBeanDefinitionPostProcessor {
 
+	/***
+	 * 5
+	 */
 	public MyMergedBeanDefinitionPostProcessor() {
 
 	}

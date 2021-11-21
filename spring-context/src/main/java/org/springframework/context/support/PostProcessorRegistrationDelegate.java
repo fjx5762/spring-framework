@@ -51,6 +51,9 @@ import org.springframework.lang.Nullable;
  */
 final class PostProcessorRegistrationDelegate {
 
+	/***
+	 * 该类代理了所有后置处理器
+	 */
 	private PostProcessorRegistrationDelegate() {
 	}
 
