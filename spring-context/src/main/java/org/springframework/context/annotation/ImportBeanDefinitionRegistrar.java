@@ -60,6 +60,11 @@ import org.springframework.core.type.AnnotationMetadata;
  */
 public interface ImportBeanDefinitionRegistrar {
 
+	/***
+	 * 由在处理 @{@link Configuration} 类时注册附加 bean 定义的类型实现的接口。
+	 * 在需要或需要在 bean 定义级别（而不是 {@code @Bean} 方法实例级别）操作时很有用。
+	 */
+
 	/**
 	 * Register bean definitions as necessary based on the given annotation metadata of
 	 * the importing {@code @Configuration} class.

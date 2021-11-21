@@ -28,4 +28,37 @@ applicationContext 与 beanFactory 区别
 通过不同资源(Resource)的来源解析出 Bean的定义信息（BeanDefinition）
 
 
+创建Bean (doCreateBean)-> 
+1、实例化 InstantiateBean， DefaultSingletonBeanRegistry 
+1.2 属性赋值 populateBean，
+2、初始化 initializeBean  
+2.1 遍历 Bean后置处理器 （ApplicationContextAwareProcessor.postProcessBeforeInitialization）
+2.1.1 执行回调 invokeAwareInterfaces
 
+
+
+后置处理器， 观察他们的实现和继承
+
+BeanPostProcessor  
+
+BeanFactoryPostProcessor
+
+
+
+
+
+
+#### 三种增强器
+
+1、BeanFactoryPostProcessor 
+2、BeanPostProcessor
+3、InitializingBean
+
+### 生命周期
+
+invokeBeanFactoryPostProcessors  
+    // 核心组件创建  => // 核心组件执行
+    BeanDefinitionRegistryPostProcessor  => 
+        postProcessBeanDefinitionRegistry (增强Bean定义信息的注册中心)
+        postProcessBeanFactory
+    

@@ -231,6 +231,10 @@ public class ConfigurationClassPostProcessor implements BeanDefinitionRegistryPo
 	/**
 	 * Derive further bean definitions from the configuration classes in the registry.
 	 */
+	/***
+	 * 从注册表中的配置类派生进一步的 bean 定义。
+	 * @param registry the bean definition registry used by the application context
+	 */
 	@Override
 	public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) {
 		int registryId = System.identityHashCode(registry);

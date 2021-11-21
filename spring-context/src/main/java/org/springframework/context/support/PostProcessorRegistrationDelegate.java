@@ -95,10 +95,16 @@ final class PostProcessorRegistrationDelegate {
 			List<BeanDefinitionRegistryPostProcessor> currentRegistryProcessors = new ArrayList<>();
 
 			// First, invoke the BeanDefinitionRegistryPostProcessors that implement PriorityOrdered.
+			/***
+			 * 首先，调用实现 PriorityOrdered 的BeanDefinitionRegistryPostProcessors。 （优先级）
+			 */
 			String[] postProcessorNames =
 					beanFactory.getBeanNamesForType(BeanDefinitionRegistryPostProcessor.class, true, false);
 			for (String ppName : postProcessorNames) {
 				if (beanFactory.isTypeMatch(ppName, PriorityOrdered.class)) {
+					/***
+					 * 提前注册
+					 */
 					currentRegistryProcessors.add(beanFactory.getBean(ppName, BeanDefinitionRegistryPostProcessor.class));
 					processedBeans.add(ppName);
 				}
@@ -109,6 +115,9 @@ final class PostProcessorRegistrationDelegate {
 			currentRegistryProcessors.clear();
 
 			// Next, invoke the BeanDefinitionRegistryPostProcessors that implement Ordered.
+			/***
+			 * 接下来，调用实现 Ordered 的BeanDefinitionRegistryPostProcessors。（优先级）
+			 */
 			postProcessorNames = beanFactory.getBeanNamesForType(BeanDefinitionRegistryPostProcessor.class, true, false);
 			for (String ppName : postProcessorNames) {
 				if (!processedBeans.contains(ppName) && beanFactory.isTypeMatch(ppName, Ordered.class)) {
@@ -122,6 +131,9 @@ final class PostProcessorRegistrationDelegate {
 			currentRegistryProcessors.clear();
 
 			// Finally, invoke all other BeanDefinitionRegistryPostProcessors until no further ones appear.
+			/***
+			 * 最后，调用所有其他BeanDefinitionRegistryPostProcessors，直到不再出现其他的。
+			 */
 			boolean reiterate = true;
 			while (reiterate) {
 				reiterate = false;
@@ -133,13 +145,22 @@ final class PostProcessorRegistrationDelegate {
 						reiterate = true;
 					}
 				}
+				/***
+				 * 根据类名首字母
+				 */
 				sortPostProcessors(currentRegistryProcessors, beanFactory);
 				registryProcessors.addAll(currentRegistryProcessors);
+				/***
+				 * BeanDefinitionRegistryPostProcessor 的 postProcessBeanDefinitionRegistry
+				 */
 				invokeBeanDefinitionRegistryPostProcessors(currentRegistryProcessors, registry, beanFactory.getApplicationStartup());
 				currentRegistryProcessors.clear();
 			}
 
 			// Now, invoke the postProcessBeanFactory callback of all processors handled so far.
+			/***
+			 * 现在，调用到目前为止处理的所有处理器的postProcessBeanFactory回调。
+			 */
 			invokeBeanFactoryPostProcessors(registryProcessors, beanFactory);
 			invokeBeanFactoryPostProcessors(regularPostProcessors, beanFactory);
 		}
