@@ -579,7 +579,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 				// Register bean processors that intercept bean creation.
 				/***
-				 * 注册Bean的后置处理器
+				 * 增强组件，注册Bean的后置处理器，但没回调方法
 				 */
 				registerBeanPostProcessors(beanFactory);
 				beanPostProcess.end();
@@ -594,6 +594,9 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 				onRefresh();
 
 				// Check for listener beans and register them.
+				/***
+				 * 注册监听器
+				 */
 				registerListeners();
 
 				// Instantiate all remaining (non-lazy-init) singletons.

@@ -1,4 +1,4 @@
-package com.cafebabe.learn.spring.processor.bean;
+package com.cafebabe.learn.spring.bean;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyInstantiationBean implements InitializingBean {
 
+	/***
+	 * 实现接口 InitializingBean 可以自己
+	 * @throws Exception
+	 */
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
