@@ -20,6 +20,10 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 	/***
 	 * 7
 	 * 干预Bean的类型
+	 * 允许没有创建过单实例对象的
+	 * 在大步骤之注册监听器/完成BeanFactory初始化时，被触发
+	 *
+	 *
 	 * @param beanClass the raw class of the bean
 	 * @param beanName the name of the bean
 	 * @return
@@ -30,6 +34,13 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 		return SmartInstantiationAwareBeanPostProcessor.super.predictBeanType(beanClass, beanName);
 	}
 
+	/***
+	 * 9
+	 * @param beanClass the raw class of the bean (never {@code null})
+	 * @param beanName the name of the bean
+	 * @return
+	 * @throws BeansException
+	 */
 	@Override
 	public Constructor<?>[] determineCandidateConstructors(Class<?> beanClass, String beanName) throws BeansException {
 		return SmartInstantiationAwareBeanPostProcessor.super.determineCandidateConstructors(beanClass, beanName);

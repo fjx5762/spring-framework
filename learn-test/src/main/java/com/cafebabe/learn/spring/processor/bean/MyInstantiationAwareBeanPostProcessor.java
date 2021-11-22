@@ -17,7 +17,11 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 	}
 
 	/***
-	 * 4.1
+	 * 8
+	 * getBean()
+	 * 		-> postProcessBeforeInstantiation  是否返回对象，
+	 * 		是，结束，不是，继续创建
+	 * 		-> 创建Bean对象
 	 * @param beanClass the class of the bean to be instantiated
 	 * @param beanName the name of the bean
 	 * @return
@@ -29,7 +33,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 	}
 
 	/***
-	 * 4.1
+	 *
 	 * @param bean the bean instance created, with properties not having been set yet
 	 * @param beanName the name of the bean
 	 * @return

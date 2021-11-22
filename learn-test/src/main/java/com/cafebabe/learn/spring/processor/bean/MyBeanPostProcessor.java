@@ -19,7 +19,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 	}
 
 	/***
-	 * 3.1
+	 *
 	 * @param bean the new bean instance
 	 * @param beanName the name of the bean
 	 * @return
@@ -31,7 +31,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 	}
 
 	/***
-	 * 3.2
+	 *
 	 * @param bean the new bean instance
 	 * @param beanName the name of the bean
 	 * @return
