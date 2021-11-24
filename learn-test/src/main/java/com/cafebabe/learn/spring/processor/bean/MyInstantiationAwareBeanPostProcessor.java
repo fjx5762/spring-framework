@@ -33,7 +33,8 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 	}
 
 	/***
-	 *
+	 * 12
+	 * Bean初始化为对象之后处理
 	 * @param bean the bean instance created, with properties not having been set yet
 	 * @param beanName the name of the bean
 	 * @return
@@ -44,6 +45,16 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 		return InstantiationAwareBeanPostProcessor.super.postProcessAfterInstantiation(bean, beanName);
 	}
 
+	/***
+	 * 13 处理属性赋值
+	 *
+	 * @AutowiredAnnotationBeanPostProcessor.postProcessProperties (自动注入在此实现)
+	 * @param pvs the property values that the factory is about to apply (never {@code null})
+	 * @param bean the bean instance created, but whose properties have not yet been set
+	 * @param beanName the name of the bean
+	 * @return
+	 * @throws BeansException
+	 */
 	@Override
 	public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
 		return InstantiationAwareBeanPostProcessor.super.postProcessProperties(pvs, bean, beanName);

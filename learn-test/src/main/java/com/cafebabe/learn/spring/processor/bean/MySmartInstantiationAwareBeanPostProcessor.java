@@ -36,6 +36,7 @@ public class MySmartInstantiationAwareBeanPostProcessor implements SmartInstanti
 
 	/***
 	 * 9
+	 * 指定构造器候选列表
 	 * @param beanClass the raw class of the bean (never {@code null})
 	 * @param beanName the name of the bean
 	 * @return

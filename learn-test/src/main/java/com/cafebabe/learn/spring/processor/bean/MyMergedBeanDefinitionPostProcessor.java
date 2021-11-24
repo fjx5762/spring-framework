@@ -1,5 +1,6 @@
 package com.cafebabe.learn.spring.processor.bean;
 
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.support.MergedBeanDefinitionPostProcessor;
 import org.springframework.beans.factory.support.RootBeanDefinition;
 
@@ -16,6 +17,13 @@ public class MyMergedBeanDefinitionPostProcessor implements MergedBeanDefinition
 
 	}
 
+	/***
+	 * 11
+	 * 处理合并的bd信息
+	 * @param beanDefinition the merged bean definition for the bean
+	 * @param beanType the actual type of the managed bean instance
+	 * @param beanName the name of the bean
+	 */
 	@Override
 	public void postProcessMergedBeanDefinition(RootBeanDefinition beanDefinition, Class<?> beanType, String beanName) {
 
@@ -25,4 +33,5 @@ public class MyMergedBeanDefinitionPostProcessor implements MergedBeanDefinition
 	public void resetBeanDefinition(String beanName) {
 		MergedBeanDefinitionPostProcessor.super.resetBeanDefinition(beanName);
 	}
+
 }

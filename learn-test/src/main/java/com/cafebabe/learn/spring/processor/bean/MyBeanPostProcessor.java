@@ -19,7 +19,8 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 	}
 
 	/***
-	 *
+	 * 14 初始化之前的后置处理，
+	 * 替换Bean对象的功能
 	 * @param bean the new bean instance
 	 * @param beanName the name of the bean
 	 * @return
@@ -31,6 +32,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 	}
 
 	/***
+	 * 16 初始化之后的后置处理
 	 *
 	 * @param bean the new bean instance
 	 * @param beanName the name of the bean
